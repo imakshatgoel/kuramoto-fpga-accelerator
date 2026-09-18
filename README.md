@@ -4,6 +4,8 @@ Verilog hardware that solves the Kuramoto oscillator equations in parallel and u
 
 This was a research project taken under Prof. Debanjan Bhowmik from the Department of Electrical Engineering, IIT Bombay.
 
+*October 2025 - November 2025*
+
 ## How it works
 
 Each node of the graph is an oscillator with a phase θᵢ. At every time step, each phase is updated with:
