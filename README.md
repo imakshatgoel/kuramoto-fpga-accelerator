@@ -1,10 +1,12 @@
 # Kuramoto FPGA Accelerator
 
-Verilog hardware that solves the Kuramoto oscillator equations in parallel and uses the result to approximate the Max-Cut graph problem.
+*Parallel Verilog hardware that solves the Kuramoto oscillator equations to approximate the Max-Cut graph problem*
 
-This was a research project taken under Prof. Debanjan Bhowmik from the Department of Electrical Engineering, IIT Bombay.
+*Research project under Prof. Debanjan Bhowmik, Department of Electrical Engineering, IIT Bombay · October 2025 - November 2025*
 
-*October 2025 - November 2025*
+---
+
+**At a glance:** one CORDIC-based computational unit per graph node, sharing a time-multiplexed bus — up to **9.1× speedup** over a serial baseline at N = 10, verified against a floating-point model to within 1.9×10⁻⁹ rad, running at up to 84.9 MHz on an Intel MAX 10 FPGA.
 
 ## How it works
 
@@ -59,7 +61,7 @@ The speedup grows roughly in proportion to N. On an Intel MAX 10 10M50 FPGA the 
 
 **ModelSim:**
 
-```
+```bash
 vlib work
 vlog cordic_sine.v computational_unit.v kuramoto_solver.v testbench.v tb_cordic.v
 vsim -c testbench -do "run -all; quit -f"
@@ -67,7 +69,7 @@ vsim -c testbench -do "run -all; quit -f"
 
 **Icarus Verilog:**
 
-```
+```bash
 iverilog -o tb.vvp testbench.v kuramoto_solver.v computational_unit.v cordic_sine.v
 vvp -n tb.vvp
 ```
