@@ -1,0 +1,20 @@
+# Quartus build artifacts
+db/
+incremental_db/
+output_files/
+
+# Simulation output
+simulation/
+work/
+transcript
+*.wlf
+*.vvp
+
+# Backup and temporary files
+*.bak
+*.qws
+*.rpt
+
+# System files
+.DS_Store
+Thumbs.db
